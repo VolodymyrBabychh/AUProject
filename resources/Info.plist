@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundleExecutable</key>
+    <string>FXPlugin</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.yourcompany.FXPlugin</string>
+    <key>CFBundleName</key>
+    <string>FXPlugin</string>
+    <key>CFBundlePackageType</key>
+    <string>BNDL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2023 Your Company. All rights reserved.</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>AudioComponents</key>
+    <array>
+        <dict>
+            <key>type</key>
+            <string>aufx</string>
+            <key>subtype</key>
+            <string>Fxpl</string>
+            <key>manufacturer</key>
+            <string>Vbab</string>
+            <key>name</key>
+            <string>YourCompany: FX Plugin</string>
+            <key>description</key>
+            <string>FX Plugin</string>
+            <key>factoryFunction</key>
+            <string>FXPluginAUFactory</string>
+            <key>sandboxSafe</key>
+            <true/>
+            <key>resourceUsage</key>
+            <dict>
+                <key>network.client</key>
+                <true/>
+                <key>temporary-exception.files.all.read-write</key>
+                <true/>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist> 

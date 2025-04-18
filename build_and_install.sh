@@ -3,6 +3,13 @@
 # Script to build and install the FX Plugin
 
 # Create build directory if it doesn't exist
+if [ -f build/CMakeCache.txt ]; then
+    OLD_SRC=$(grep "^CMAKE_HOME_DIRECTORY" build/CMakeCache.txt | cut -d= -f2)
+    if [ "$OLD_SRC" != "$(pwd)" ]; then
+        echo "CMake source dir changed ($OLD_SRC → $(pwd)), resetting cache"
+        rm -rf build
+    fi
+fi
 mkdir -p build
 cd build
 

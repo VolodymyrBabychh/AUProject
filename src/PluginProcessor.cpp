@@ -390,7 +390,13 @@ void FXPluginProcessor::analyzeAudioBlock(const juce::AudioBuffer<float>& buffer
         
         frame.magnitudes.resize(numBinsToInclude);
         for (int i = 0; i < numBinsToInclude; ++i) {
-            frame.magnitudes[i] = juce::Decibels::gainToDecibels(window[i] / static_cast<float>(fftSize));
+            for (int i = 0; i < numBinsToInclude; ++i) {
+                // Convert raw FFT magnitude to dBFS without the extra 1 / fftSize attenuation
+                float mag = window[i];
+                if (mag <= 0.0f)
+                    mag = 1.0e-12f;        // avoid log(0) -> -inf
+                frame.magnitudes[i] = juce::Decibels::gainToDecibels(mag);
+            }
         }
         
         {
